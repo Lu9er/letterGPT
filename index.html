@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter GPT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="theme-toggle-button">Toggle Theme</button>
+
+    <div id="auth-container">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="signup-button">Sign Up</button>
+        <button id="login-button">Login</button>
+        <button id="anonymous-login-button">Login Anonymously</button>
+        <button id="logout-button" style="display: none;">Logout</button>
+        <div id="user-status">Not logged in</div>
+    </div>
+
+    <section id="hero-section">
+        <h1>Letter GPT – Instant Cover Letters That Sound Like You</h1>
+        <p>Over 2,000 letters generated worldwide</p>
+    </section>
+
+    <form id="cover-letter-form">
+        <label for="job-title">Job title</label>
+        <input type="text" id="job-title" name="job-title">
+
+        <label for="company">Company</label>
+        <input type="text" id="company" name="company">
+
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location">
+
+        <label for="job-description">Job description</label>
+        <textarea id="job-description" name="job-description"></textarea>
+
+        <label for="cv-upload">Upload CV (PDF only)</label>
+        <input type="file" id="cv-upload" name="cv-upload" accept=".pdf">
+
+        <label for="creativity-level">Creativity level</label>
+        <input type="range" id="creativity-level" name="creativity-level" min="0" max="1" step="0.1">
+        <output for="creativity-level" id="creativity-level-output">0.5</output> 
+
+        <input type="checkbox" id="witty-remark" name="witty-remark">
+        <label for="witty-remark">Include a witty remark at the end of my letter</label>
+
+        <button type="submit">Generate Cover Letter</button>
+    </form>
+
+    <div id="cover-letter-output" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc; min-height: 100px; white-space: pre-wrap;">
+        <!-- Cover letter or errors will be displayed here by script.js -->
+    </div>
+
+    <section id="info-sections">
+        <div>
+            <h2>How it works</h2>
+            <p>Upload → Customize → Generate</p>
+        </div>
+        <div>
+            <h2>Why choose Later GPT</h2>
+            <p>Focus on refining messages fast</p>
+        </div>
+        <div>
+            <blockquote>Letter GPT helped me get responses within days. The tone felt like me—only better. Worth every dollar.</blockquote>
+        </div>
+    </section>
+
+    <section id="pricing-section">
+        <h2>Pricing</h2>
+        <div>
+            <h3>Free</h3>
+            <p>3 cover letters per month</p>
+            <button id="try-free-button">Try free</button>
+        </div>
+        <div>
+            <h3>Premium</h3>
+            <p>$5/month</p>
+            <a href="https://lettergpt.gumroad.com/l/letter-gpt" target="_blank" class="button" id="upgrade-button">Upgrade for $5</a>
+        </div>
+    </section>
+
+    <footer>
+        <a href="#">Twitter</a>
+        <a href="tos.html">Terms of Service</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <p>100% open source – <a href="https://github.com/Lu9er/letterGPT" target="_blank" rel="noopener noreferrer">View on GitHub</a></p>
+    </footer>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-functions.js"></script>
+
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
